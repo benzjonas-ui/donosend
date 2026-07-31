@@ -1,0 +1,2 @@
+import { causes } from '../data'
+export default function Causes(){return <section className="container section page"><span className="eyebrow">Organisationen</span><h1>Projekte, die Menschen verstehen</h1><p className="lead">Im MVP werden Organisationen redaktionell geprüft und mit klaren Wirkungszielen dargestellt.</p><div className="grid three">{causes.map((c,i)=><article className="cause-card" key={c.id}><span>0{i+1}</span><h2>{c.name}</h2><p>{c.description}</p><button className="button ghost full">Projekt ansehen</button></article>)}</div></section>}
