@@ -8,7 +8,7 @@ export default function QRPay(){
  const [error,setError]=useState('')
  const paymentUrl=useMemo(()=>{
    if(typeof window==='undefined') return 'https://donosend.de/qr'
-   return `${window.location.origin}/qr?seller=${pilot.sellerId}&organisation=${pilot.organisationId}&amount=1.00`
+   return `${window.location.origin}/pay/jonas`
  },[])
 
  async function pay(){
@@ -36,7 +36,7 @@ export default function QRPay(){
    <div className="pilot-intro">
      <span className="eyebrow">Donosend Pilot · Verkäuferansicht</span>
      <h1>1,00 € über Jonas an Pro Vita Animale senden.</h1>
-     <p className="lead">Scanne den QR-Code mit einem zweiten Smartphone. Danach öffnet sich diese sichere Test-Zahlungsseite und die Transaktion kann über Stripe Sandbox abgeschlossen werden.</p>
+     <p className="lead">Zeige diesen persönlichen QR-Code auf deinem Gerät. Beim Scan öffnet sich auf dem anderen Smartphone direkt Jonas’ öffentliche 1,00-€-Kundenseite und die Transaktion kann über Stripe Sandbox abgeschlossen werden.</p>
      <div className="pilot-badges"><span><BadgeCheck size={18}/> Jonas · Test-Verkäufer</span><span><ShieldCheck size={18}/> Stripe-Testmodus</span></div>
 
      <article className="checkout-summary">
@@ -46,7 +46,7 @@ export default function QRPay(){
        <div className="summary-total"><span>Testbeitrag</span><strong>1,00 €</strong></div>
      </article>
 
-     <button className="button primary payment-button" onClick={pay} disabled={loading}>{loading?'Stripe wird geöffnet…':'1,00 € als Test senden'}</button>
+     <div className="actions"><a className="button primary payment-button" href="/pay/jonas">Kundenseite auf diesem Gerät testen</a><button className="button ghost" onClick={pay} disabled={loading}>{loading?'Stripe wird geöffnet…':'Direkt zu Stripe'}</button></div>
      {error&&<p className="error">{error}</p>}
      <p className="demo-disclaimer"><strong>Wichtig:</strong> Es fließt noch kein echtes Geld. Pro Vita Animale ist hier als Präsentations- und Testprofil eingebunden; eine Partnerschaft ist noch nicht bestätigt.</p>
    </div>

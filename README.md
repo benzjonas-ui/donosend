@@ -68,3 +68,9 @@ Nach dem ersten Netlify-Deploy:
 4. Zahlungsbeiträge und Plattformgebühren festlegen
 5. Organisationen rechtlich und technisch verifizieren
 6. echtes Wirkungsdashboard aus Zahlungsdaten aufbauen
+
+## Pilot Flow v2
+- `/profil/jonas` – öffentliches Verkäuferprofil mit persönlichem QR-Code
+- `/pay/jonas` – direkte Kundenseite ohne Donosend-Login
+- `/organisationen` – Pro Vita Animale als klar gekennzeichnetes Demo-Profil
+- `/success` – Bestätigung nach Stripe-Sandbox-Zahlung

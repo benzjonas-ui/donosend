@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 export default function Layout({ children }) {
   const [open, setOpen] = useState(false)
-  const links = [['/', 'Start'], ['/partner', 'Partner'], ['/organisationen', 'Organisationen'], ['/dashboard', 'Dashboard'], ['/qr', 'QR-Zahlung']]
+  const links = [['/', 'Start'], ['/partner', 'Partner'], ['/organisationen', 'Organisationen'], ['/profil/jonas', 'Mein Profil'], ['/dashboard', 'Dashboard'], ['/qr', 'QR-Code']]
   return <div className="app-shell">
     <header className="topbar">
       <Link className="brand" to="/"><span className="brand-mark"><HeartHandshake size={22}/></span>Donosend</Link>
