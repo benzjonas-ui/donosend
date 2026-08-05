@@ -5,7 +5,7 @@ import {
   Compass,
   Heart,
   Home,
-  MapPin,
+  HandHeart,
   MessageCircle,
   Plus,
   Search,
@@ -135,21 +135,43 @@ export default function App() {
         .brand {
           display: flex;
           align-items: center;
-          gap: 11px;
+          gap: 12px;
           border: 0;
+          padding: 0;
           background: transparent;
           color: #17352d;
-          font-weight: 850;
-          font-size: 23px;
+          text-align: left;
         }
 
         .brand-mark {
           display: grid;
           place-items: center;
-          width: 40px;
-          height: 40px;
+          width: 44px;
+          height: 44px;
           border-radius: 14px;
           background: #dff482;
+          color: #17352d;
+          box-shadow: 0 8px 22px rgba(23, 53, 45, .10);
+        }
+
+        .brand-copy {
+          display: grid;
+          gap: 3px;
+          line-height: 1;
+        }
+
+        .brand-name {
+          font-size: 25px;
+          font-weight: 900;
+          letter-spacing: -1px;
+        }
+
+        .brand-tagline {
+          color: #718079;
+          font-size: 8px;
+          font-weight: 850;
+          letter-spacing: 1.15px;
+          text-transform: uppercase;
         }
 
         .search {
@@ -613,8 +635,17 @@ export default function App() {
             padding: 0 16px;
           }
 
-          .brand {
-            font-size: 20px;
+          .brand-name {
+            font-size: 22px;
+          }
+
+          .brand-tagline {
+            display: none;
+          }
+
+          .brand-mark {
+            width: 40px;
+            height: 40px;
           }
 
           .search {
@@ -678,8 +709,13 @@ export default function App() {
       <div className="dono-app">
         <header className="topbar">
           <button className="brand" onClick={() => setActivePage('feed')}>
-            <span className="brand-mark">D</span>
-            Dono
+            <span className="brand-mark" aria-hidden="true">
+              <HandHeart size={24} strokeWidth={2.35} />
+            </span>
+            <span className="brand-copy">
+              <span className="brand-name">Dono</span>
+              <span className="brand-tagline">Gemeinsam Wirkung schaffen</span>
+            </span>
           </button>
 
           <label className="search">
